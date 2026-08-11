@@ -52,6 +52,11 @@
   "field.select": "Select…",
   "field.moreInfo": "More information",
 
+  "error.email": "That email looks incomplete. Check for the @ and the domain.",
+  "error.url": "The address needs to start with https://",
+  "error.endBeforeStart": "The end date comes before the start date.",
+  "error.tooLong": "That text is too long to sit well on a resume.",
+
   "monthYear.month": "Month",
   "monthYear.year": "Year",
   "month.1": "January",
