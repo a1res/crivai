@@ -8,6 +8,7 @@ import { EducationSection } from "@/components/form/EducationSection";
 import { ExperienceSection } from "@/components/form/ExperienceSection";
 import { ExtrasSection } from "@/components/form/ExtrasSection";
 import { IdentificationSection } from "@/components/form/IdentificationSection";
+import { ReviewSection } from "@/components/form/ReviewSection";
 import {
   LanguagesSection,
   SkillsSection,
@@ -33,6 +34,7 @@ const SECTION_CONTENT: Record<string, ComponentType> = {
   habilidades: SkillsSection,
   idiomas: LanguagesSection,
   extras: ExtrasSection,
+  revisao: ReviewSection,
 };
 
 export default function Home() {
