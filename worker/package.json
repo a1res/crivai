@@ -1,0 +1,17 @@
+{
+  "name": "crivai-worker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cloudflare Worker backing Crivai's AI recommendations. Kept separate from the Next.js app so the static site never bundles server dependencies.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260811.1",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.120.1"
+  }
+}

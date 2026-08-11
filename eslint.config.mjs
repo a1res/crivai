@@ -18,6 +18,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The Worker is a separate package with its own toolchain — linting it with
+    // the Next.js/React ruleset would only produce noise.
+    "worker/**",
   ]),
 ]);
 

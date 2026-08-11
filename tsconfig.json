@@ -38,5 +38,7 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  // The Worker targets the Cloudflare runtime, not the browser, and carries its
+  // own tsconfig and dependencies. Run `npm run typecheck` inside worker/ for it.
+  "exclude": ["node_modules", "worker"]
 }
