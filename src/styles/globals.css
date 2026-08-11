@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * Crivai design tokens.
+ *
+ * Tailwind v4 is configured here in CSS via `@theme`, not in a JS config file.
+ *
+ * Tokens are named for their ROLE (primary, ink, muted, surface), never for the
+ * colour itself, so the palette can be retuned in this one file without a sweep
+ * through every component.
+ *
+ * Navy and slate come from section 4 of the research, which restricts resumes to
+ * navy blue and dark grey. Matching the interface to the document it produces
+ * keeps the two coherent.
+ *
+ * There is deliberately no dark theme: the resume preview added in Phase 3 is a
+ * sheet of white paper, and a dark interface would frame it as a glaring white
+ * rectangle, which hurts exactly the visual judgement the preview exists for.
+ */
+@theme {
+  /* Brand / action */
+  --color-primary: #1e3a5f;
+  --color-primary-hover: #172f4d;
+  --color-primary-soft: #eef2f7;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Text */
+  --color-ink: #0f172a;
+  --color-muted: #475569;
+  --color-subtle: #64748b;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Surfaces and lines */
+  --color-surface: #f8fafc;
+  --color-canvas: #ffffff;
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+
+  /* Feedback. Restrained on purpose — these carry meaning, not decoration. */
+  --color-danger: #b42318;
+  --color-danger-soft: #fef3f2;
+  --color-warning: #b54708;
+  --color-warning-soft: #fffaeb;
+  --color-success: #067647;
+  --color-success-soft: #ecfdf3;
+
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 0.625rem;
+  --radius-control: 0.375rem;
+
+  /* Shadows stay nearly flat. Depth here would compete with the resume preview,
+     which is the one element on screen that should read as a physical object. */
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.06);
+  --shadow-raised: 0 4px 12px rgb(15 23 42 / 0.08);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+/* A single, unmistakable focus ring everywhere. Much of the audience fills this
+   form on a phone or with a keyboard; losing the focus position mid-form is a
+   real way to lose someone's work. */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-control);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
