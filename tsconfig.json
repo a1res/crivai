@@ -5,6 +5,14 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    // Index access returns `T | undefined`. The resume model is built almost
+    // entirely out of repeatable arrays (experiences, education, languages…),
+    // where reading a missing index is a realistic bug rather than a
+    // hypothetical one.
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
