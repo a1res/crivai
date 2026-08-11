@@ -40,6 +40,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# Vercel (unused — the site deploys to GitHub Pages — but kept so a stray
+# `vercel` invocation cannot commit local state)
+.vercel
+
 # Editors
 .vscode/*
 !.vscode/extensions.json
