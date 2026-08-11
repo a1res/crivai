@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider";
+import { SiteHeader } from "@/components/layout/SiteHeader";
 import "@/styles/globals.css";
 
 // Self-hosted at build time by next/font, so a visitor's browser never contacts
@@ -24,7 +25,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="pt-BR" className={`${plexSans.variable} h-full antialiased`}>
       <body className="font-sans flex min-h-full flex-col">
-        <LocaleProvider>{children}</LocaleProvider>
+        <LocaleProvider>
+          <SiteHeader />
+          {children}
+        </LocaleProvider>
       </body>
     </html>
   );
