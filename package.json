@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check:locales": "node scripts/check-locales.mjs",
-    "check": "npm run typecheck && npm run lint && npm run format:check && npm run check:locales"
+    "check:lockfile": "node scripts/check-lockfile.mjs",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm run check:locales && npm run check:lockfile"
   },
   "dependencies": {
     "next": "16.3.0",
@@ -22,6 +23,9 @@
     "zustand": "^5.0.14"
   },
   "devDependencies": {
+    "@emnapi/core": "1.11.3",
+    "@emnapi/runtime": "1.11.3",
+    "@emnapi/wasi-threads": "1.2.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -30,6 +34,7 @@
     "eslint-config-next": "16.3.0",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.9.6",
+    "semver": "^7.8.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
