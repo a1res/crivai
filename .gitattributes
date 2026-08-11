@@ -1,0 +1,10 @@
+# Normalize line endings to LF in the repository AND in the working copy.
+# Development happens on Windows (core.autocrlf=true) while the GitHub Actions
+# runner is Linux — without this, Prettier and ESLint would disagree about line
+# endings between the two environments.
+* text=auto eol=lf
+
+# The research document is versioned directly in Git (no Git LFS — ~3MB does not
+# justify the extra tooling). Mark it binary so Git never tries to diff or
+# normalize its contents.
+*.docx binary
