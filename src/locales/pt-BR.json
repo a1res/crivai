@@ -52,6 +52,11 @@
   "field.select": "Selecione…",
   "field.moreInfo": "Mais informações",
 
+  "storage.restored": "Recuperamos o que você tinha preenchido neste navegador.",
+  "storage.dismiss": "Entendi",
+  "storage.full": "O armazenamento do navegador está cheio, então as alterações mais recentes não estão sendo salvas. Exporte o JSON para não perder nada.",
+  "storage.unavailable": "Não foi possível salvar neste navegador (pode ser janela anônima). Exporte o JSON para guardar seu currículo.",
+
   "error.email": "Esse e-mail parece incompleto. Confira se tem @ e o domínio.",
   "error.url": "O endereço precisa começar com https://",
   "error.endBeforeStart": "A data de fim é anterior à de início.",

@@ -52,6 +52,11 @@
   "field.select": "Select…",
   "field.moreInfo": "More information",
 
+  "storage.restored": "We brought back what you had filled in on this browser.",
+  "storage.dismiss": "Got it",
+  "storage.full": "Browser storage is full, so the most recent changes are not being saved. Export the JSON so nothing is lost.",
+  "storage.unavailable": "Could not save on this browser (it may be a private window). Export the JSON to keep your resume.",
+
   "error.email": "That email looks incomplete. Check for the @ and the domain.",
   "error.url": "The address needs to start with https://",
   "error.endBeforeStart": "The end date comes before the start date.",
