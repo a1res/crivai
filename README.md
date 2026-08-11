@@ -56,9 +56,23 @@ já no localhost em vez de falhar silenciosamente só depois do deploy. A raiz
 | `npm run typecheck`               | Gera os tipos do Next e roda o compilador    |
 | `npm run lint` / `lint:fix`       | ESLint                                       |
 | `npm run format` / `format:check` | Prettier                                     |
+| `npm run check:locales`           | Dicionários pt-BR/en alinhados               |
 
 Rode `npm run check` antes de considerar qualquer tarefa concluída — é o mesmo comando
 que roda no CI e que bloqueia o deploy em caso de falha.
+
+### Textos e idiomas
+
+Nenhum texto visível ao usuário fica hardcoded em componente: tudo passa por `t()`, lendo
+de [src/locales/](src/locales/). Duas redes de proteção impedem que um idioma fique para
+trás — o TypeScript derruba o build se uma chave existir num dicionário e faltar no outro,
+e `check:locales` pega valores vazios e placeholders divergentes (ex.: `{done}` em
+português contra `{count}` em inglês, que falharia em silêncio só no idioma não testado).
+
+### Guia de estilo
+
+`/style-guide` mostra todos os componentes base em seus estados, para revisão visual sem
+precisar rodar nada. É uma página interna e será removida antes do lançamento.
 
 ## O Worker de IA
 
